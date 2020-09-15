@@ -7,9 +7,9 @@ namespace GraphicLibrary
     {
         private List<Data> _graphList = new List<Data>();
 
-        public Graphic(string title, string xAxis, string yAxis)
+        public Graphic(string title, string xAxis, string yAxis, string output = "xwin")
         {
-            dislin.metafl("xwin");
+            dislin.metafl(output);
             dislin.disini();
             dislin.titlin(title, 3);
             dislin.name(xAxis, "X");
@@ -58,14 +58,21 @@ namespace GraphicLibrary
             AddGraph(x.ToArray(), y.ToArray(), color);
         }
 
+        public void ClearGraphList()
+        {
+            _graphList.Clear();
+        }
+
         public void DrawGraph()
         {
+            dislin.marker(16);
+            dislin.incmrk(1);
             foreach (var graph in _graphList)
             {
                 dislin.color(graph.Color);
                 dislin.curve(graph.X, graph.Y, graph.Y.Length);
             }
-
+            dislin.endgrf();
             dislin.disfin();
         }
 

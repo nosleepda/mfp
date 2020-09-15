@@ -8,6 +8,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "three", "three\three.fsproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphicLibrary", "GraphicLibrary\GraphicLibrary.csproj", "{914D408A-D1FA-43F5-B75F-249C174A2D9B}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "four", "four\four.fsproj", "{8D8F2E41-4F66-4F6A-8FB9-1165B1119604}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{914D408A-D1FA-43F5-B75F-249C174A2D9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{914D408A-D1FA-43F5-B75F-249C174A2D9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{914D408A-D1FA-43F5-B75F-249C174A2D9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D8F2E41-4F66-4F6A-8FB9-1165B1119604}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D8F2E41-4F66-4F6A-8FB9-1165B1119604}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D8F2E41-4F66-4F6A-8FB9-1165B1119604}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D8F2E41-4F66-4F6A-8FB9-1165B1119604}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

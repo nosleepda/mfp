@@ -42,8 +42,7 @@ let main argv =
     
     for i in [0 .. 15] do
         (temperExp.[10*i] - temperReal.[i]) |> abs |> listda.Add
-        
-    
+       
     
     let graphs = Graphic("Coffee temperature", "Time, m", "Temperature, C")
     graphs.AddGraph(timeExp, temperExp, "red")
