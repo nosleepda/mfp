@@ -63,10 +63,14 @@ namespace GraphicLibrary
             _graphList.Clear();
         }
 
-        public void DrawGraph()
+        public void DrawGraph(bool isMark = true)
         {
-            dislin.marker(16);
-            dislin.incmrk(1);
+            if (isMark)
+            {
+                dislin.marker(16);
+                dislin.incmrk(1); 
+            }
+            
             foreach (var graph in _graphList)
             {
                 dislin.color(graph.Color);
