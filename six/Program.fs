@@ -48,7 +48,6 @@ let main argv =
     let mutable stopLoop = false
     while not stopLoop do
         speed <- eulerCauchy speed
-        printfn "%f" speed
         stopLoop <-  isConstant speed (speeds.Item (speeds.Count - 1))
         speeds.Add speed
         times.Add ((times |> List.ofSeq |> List.last) + step)
