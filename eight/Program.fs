@@ -1,8 +1,4 @@
-﻿// Learn more about F# at http://fsharp.org
-
-open System.Collections.Generic
-open FsAlg.Generic
-open CenterSpace.NMath.Core
+﻿open System.Collections.Generic
 open GraphicLibrary
 open MathNet.Numerics.LinearAlgebra
 open MathNet.Numerics.LinearAlgebra.Double
@@ -77,4 +73,4 @@ let main argv =
     graphs.SetPlane(0.0, (xs |> List.ofSeq |> List.max) + 0.1, 0.0, 0.2, -2.0, (m4 |> List.ofSeq |> List.max) + 0.5,-2.0,0.1)
     graphs.DrawGraph(false)
 
-    0 // return an integer exit code
+    0
