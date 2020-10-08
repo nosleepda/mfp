@@ -15,7 +15,6 @@ let p =
 let pg =
     800.0 //kosta i dimok
     
-
 let weight = 4.0 / 3.0 * Math.PI * R ** 3.0 * (p - pg)
 
 let weight2 = 4.0 / 3.0 * Math.PI * R ** 3.0 * p 

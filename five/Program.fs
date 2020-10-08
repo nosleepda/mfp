@@ -36,7 +36,7 @@ let heights = List<float>[0.0]
 let speeds = List<float>[0.0]
 
 let isConstant s1 s2 =
-    abs (s1 - s2) <= 0.001
+    abs (s1 - s2) <= 0.0001
 
 [<EntryPoint>]
 let main argv =
@@ -58,11 +58,11 @@ let main argv =
     
     let graphs = Graphic("Down", "Time", "Speed")
     graphs.AddGraph(times, speeds, "red")
-    graphs.SetPlane(0, Convert.ToInt32 (times |> List.ofSeq |> List.last) + 4,0,4,0, Convert.ToInt32 (speeds |> List.ofSeq |> List.last) + 2,0,5)
+    graphs.SetPlane(0, Convert.ToInt32 (times |> List.ofSeq |> List.last) + 2,0,1,0, Convert.ToInt32 (speeds |> List.ofSeq |> List.last) + 1,0,1)
     graphs.DrawGraph()
     
-    let graphs2 = Graphic("Down", "Time", "Speed")
+    let graphs2 = Graphic("Down", "Time", "Height")
     graphs2.AddGraph(times, heights, "green")
-    graphs2.SetPlane(0,Convert.ToInt32 (times |> List.ofSeq |> List.last) + 4,0,4, 0, Convert.ToInt32 (heights |> List.ofSeq |> List.last) + 50,0,100)
+    graphs2.SetPlane(0,Convert.ToInt32 (times |> List.ofSeq |> List.last) + 2,0,1, 0, Convert.ToInt32 (heights |> List.ofSeq |> List.last) + 10,0,5)
     graphs2.DrawGraph()
     0
