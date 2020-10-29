@@ -1,10 +1,15 @@
 ﻿open System
 open System.Collections.Generic
+open Graph2
 open GraphicLibrary
 
-let weight = 100.0 
+let weight =
+    100.0 //kosta
+    //60.0 //dimok
 
-let R = 2.9
+let R =
+    2.9 //kosta
+    //2.1 //dimok
 
 let c = 1.33
 
@@ -56,13 +61,16 @@ let main argv =
     printf "\n Высота:"
     heights.ForEach(fun x -> printf "%2.4f " x)
     
-    let graphs = Graphic("Down", "Time", "Speed")
-    graphs.AddGraph(times, speeds, "red")
-    graphs.SetPlane(0, Convert.ToInt32 (times |> List.ofSeq |> List.last) + 2,0,1,0, Convert.ToInt32 (speeds |> List.ofSeq |> List.last) + 1,0,1)
-    graphs.DrawGraph()
+    Graph.draw times speeds
+    Graph.draw times heights
     
-    let graphs2 = Graphic("Down", "Time", "Height")
-    graphs2.AddGraph(times, heights, "green")
-    graphs2.SetPlane(0,Convert.ToInt32 (times |> List.ofSeq |> List.last) + 2,0,1, 0, Convert.ToInt32 (heights |> List.ofSeq |> List.last) + 10,0,5)
-    graphs2.DrawGraph()
+//    let graphs = Graphic("Down", "Time", "Speed")
+//    graphs.AddGraph(times, speeds, "red")
+//    graphs.SetPlane(0, Convert.ToInt32 (times |> List.ofSeq |> List.last) + 2,0,1,0, Convert.ToInt32 (speeds |> List.ofSeq |> List.last) + 1,0,1)
+//    graphs.DrawGraph()
+//    
+//    let graphs2 = Graphic("Down", "Time", "Height")
+//    graphs2.AddGraph(times, heights, "green")
+//    graphs2.SetPlane(0,Convert.ToInt32 (times |> List.ofSeq |> List.last) + 2,0,1, 0, Convert.ToInt32 (heights |> List.ofSeq |> List.last) + 10,0,5)
+//    graphs2.DrawGraph()
     0

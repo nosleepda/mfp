@@ -1,33 +1,54 @@
 ﻿open System.Collections.Generic
-open GraphicLibrary
+open Graph2
 open MathNet.Numerics.LinearAlgebra
 open MathNet.Numerics.LinearAlgebra.Double
 
-let x0 = 0.1
+let x0 =
+//    3.0 // dimok
+    -1.0 //kosta
+    // 0.1 //exp
 
-let xk = 1.1
+let xk =
+    // 6.0 // dimok
+    1.0 // kosta
+    // 1.1 //exp
+
+let n = 11
     
-let h = 0.1
+let h = (xk - x0) / 10.0
 
-let p x = exp x
+let p x =
+    // 3.0 * x ** 2.0 + 1.0 //dimok
+    3.0 * x ** 2.0 //kosta
+    //exp x //exp
 
-let q x = x / 2.0
+let q x =
+    //(x - 1.0) ** 2.0 / (x - 2.0) //dimok
+    1.0 / (x - 2.0) // kosta
+    //x / 2.0 //exp
 
-let f x = x ** 2.0
+let f x =
+    // 2.0 * x // dimok
+    x //kosta
+    //x ** 2.0 //exp
 
-let c1 = 1.0
+let c1 = 1.0 
 
-let c2 = -1.2
+let c2 = 0.0
 
-let c = 0.0
+let c =
+//    1.5 //dimok
+    1.0 // kosta
+    //0.0 //exp
 
-let d1 = 2.0
+let d1 = 1.0
 
-let d2 = -2.5
+let d2 = 0.0
 
-let d = -4.0
-
-let n = (xk - x0) / h + 1.0 |> int 
+let d =
+    //4.0 //dimok
+    2.0 //kosta
+    //-4.0 //exp
 
 let xs = [x0 .. h .. xk]
 
@@ -61,16 +82,21 @@ let mda =
 
 [<EntryPoint>]
 let main argv =
-    printfn " %i " n
     let arr = array2D mda
-    let m2 = DenseMatrix.OfArray arr
-    let m3 = m2.Solve Fs
-    m3 |> Vector.iter (printf "%f ")
-    let m4 = List<float> m3
-    let m5 = List<float> xs
-    let graphs = Graphic("Down", "X", "Y")
-    graphs.AddGraph(m5, m4, "red")
-    graphs.SetPlane(0.0, (xs |> List.ofSeq |> List.max) + 0.1, 0.0, 0.2, -2.0, (m4 |> List.ofSeq |> List.max) + 0.5,-2.0,0.1)
-    graphs.DrawGraph(false)
+    let matrix = DenseMatrix.OfArray arr
+    let ysVector = matrix.Solve Fs
+    xs |> List.iter (printf "%1.4f")
+    printf "\n"
+    ysVector |> Vector.iter (printf "%1.4f ")
+    let ys = List.ofSeq ysVector
+    
+    
+    Graph.draw xs ys
+    
+//    
+//    let graphs = Graphic("Down", "X", "Y")
+//    graphs.AddGraph(m5, m4, "red")
+//    graphs.SetPlane(0.0, (xs |> List.ofSeq |> List.max) + 0.1, 0.0, 0.2, -2.0, (m4 |> List.ofSeq |> List.max) + 0.5,-2.0,0.1)
+//    graphs.DrawGraph(false)
 
     0
