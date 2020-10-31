@@ -158,11 +158,4 @@ let main argv =
         xsTemp <- List<float>[0.0]
 
     Graph.draw3 xsA ysA xsB ysB xsAB ysAB
-    
-    
-
-//    let graphs = Graphic("Down", "X", "Y")
-//    graphs.AddGraph(xs, ys, "red")
-//    graphs.SetPlane(0.0, (xs |> List.ofSeq |> List.max) + 0.1, 0.0, 0.2, 0.0, (ys |> List.ofSeq |> List.max) + 0.1,0.0,0.1)
-//    graphs.DrawGraph(false)
     0

@@ -10,9 +10,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\testPlot\testPlot\testPlot.fsproj" />
       <ProjectReference Include="..\Graph2\Graph2.fsproj" />
-      <ProjectReference Include="..\GraphicLibrary\GraphicLibrary.csproj" />
     </ItemGroup>
 
 </Project>

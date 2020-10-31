@@ -89,14 +89,6 @@ let main argv =
     printf "\n"
     ysVector |> Vector.iter (printf "%1.4f ")
     let ys = List.ofSeq ysVector
-    
-    
+       
     Graph.draw xs ys
-    
-//    
-//    let graphs = Graphic("Down", "X", "Y")
-//    graphs.AddGraph(m5, m4, "red")
-//    graphs.SetPlane(0.0, (xs |> List.ofSeq |> List.max) + 0.1, 0.0, 0.2, -2.0, (m4 |> List.ofSeq |> List.max) + 0.5,-2.0,0.1)
-//    graphs.DrawGraph(false)
-
     0

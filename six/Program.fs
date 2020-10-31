@@ -1,7 +1,6 @@
 ﻿open System
 open System.Collections.Generic
 open Graph2
-open GraphicLibrary
 
 let R =
 //    0.13//elv
@@ -109,14 +108,4 @@ let main argv =
     Graph.draw times heights
     Graph.draw timesAnalytics speedsAnalytics
     Graph.draw timesAnalytics heightsAnalytics
-    
-//    let graphs = Graphic("Down", "Time", "Speed")
-//    graphs.AddGraph(times, speeds, "red")
-//    graphs.SetPlane(0.0, (times |> List.ofSeq |> List.last) + 0.5, 0.0, 0.1, 0.0, (speeds |> List.ofSeq |> List.last) + 0.5,0.0,0.1)
-//    graphs.DrawGraph(false)
-//    
-//    let graphs2 = Graphic("Down", "Time", "Speed")
-//    graphs2.AddGraph(times, heights, "green")
-//    graphs.SetPlane(0.0, (times |> List.ofSeq |> List.last) + 0.5, 0.0, 0.1, 0.0, (heights |> List.ofSeq |> List.last) + 0.2,0.0,0.1)
-//    graphs2.DrawGraph(false)
     0
